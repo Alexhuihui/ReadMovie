@@ -1,0 +1,21 @@
+<!--先静后动，先样式后数据-->
+<view class='container'>
+  <image class = "head-image" src="{{postData.headImgSrc}}"></image>
+  <image catchtap="onMusicTap" class="audio" src="{{isPlayingMusic? 'http://1.2930807240.applinzi.com/images/music/music-stop.png':'http://1.2930807240.applinzi.com/images/music/music-start.png'}}"></image>
+  <view class="author-date">
+    <image class = "avatar" src="{{postData.avatar}}"></image>
+    <text class="author">{{postData.author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{postData.dateTime}}</text>
+  </view>
+  <text class ="title">{{postData.tiltle}}</text>
+  <view class="tool">
+    <view class="circle-img">
+      <image wx:if="{{collected}}" catchtap="onCollectionTap" src="http://1.2930807240.applinzi.com/images/icon/collection.png"></image>
+      <image wx:else catchtap="onCollectionTap" src="http://1.2930807240.applinzi.com/images/icon/collection-anti.png"></image>
+      <image catchtap="onShareTap"  class="share-img" src="http://1.2930807240.applinzi.com/images/icon/share.png"></image>
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <text class="detail">{{postData.detail}}</text>
+</view>
